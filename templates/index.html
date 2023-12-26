@@ -15,21 +15,23 @@
  
 </head>
 <body>
+  
   <div class="container-fluid header" style="display: flex;">
-    <div class="logoHolder" style="width: 40%;">
-    <div class="imageHolder" style="height:23vmin;width:23vmin">
+    <div class="logoHolder" >
+    <div class="imageHolder" >
       {% load static %}
-    <img src="{% static 'images/logo.png' %}" alt="My image" style="max-width: 100%;object-fit: contain;">
+    <img src="{% static 'images/logoNew.png' %}" alt="My image" style="max-width: 100%;object-fit: contain;">
     </div>
     </div>
     <div class="icon-holder-PC">
         <ul class="nav-icons">
-          <li>About</li>
-          <li>What-we-Offer?</li>
-          <li>Projects</li>
-          <li>Team</li>
-          <li>Blogs</li>
-          <li>Contact</li>
+          <li><a href="#about" style="color:black">About</a></li>
+          <li><a href="#services" style="color:black">Services</a></li>
+          <li><a href="#team" style="color:black">Team</a></li>
+          <li><a href="#careers" style="color:black">Careers</a></li>
+          <li><a href="#testinomials" style="color:black">Testinomials</a></li>
+          <li><a href="#Blogs" style="color:black">Blogs</a></li>
+          <li><a href="#about" style="color:black">Contact</a></li>
 
         </ul>
     </div>
@@ -38,24 +40,52 @@
         <div class="imageHolder1">
        
         {% load static %}
-    <img src="{% static 'images/menu.png' %}" alt="My image" class="imageStyle">
+    <img src="{% static 'images/menu.png' %}" alt="My image" class="imageStyle" id="hamIcon">
           </div>
  
 
   </div>
   </div>
-  <div class="container-fluid border banner">
 
-    <div class="row">
-      <div class="col-md-6 border"></div>
-      <div class="col-md-6 border" style="display: flex; justify-content: center; align-items: center;">
-        <div class="imageHolder" style="height:85%;width:85%">
-        {% load static %}
-      <img src="{% static 'images/coder.avif' %}" alt="My image" style="max-width: 100%; max-height:100%;  object-fit: contain;">
-      </div>
-      </div>
-     </div> 
+  <div class="navHolder" id="navHam">
+    <div class="navIconHam">
+      <div class="icon">About</div>
+      <div class="icon">Services</div>
+      <div class="icon">Team</div>
+      <div class="icon">Career</div>
+      <div class="icon">Testinomials</div>
+      <div class="icon">Blogs</div>
+      <div class="icon">Contact</div>
+    </div>
   </div>
+  <div class="container-fluid banner">
+    <div class="row">
+    <div class="col-lg-6" style="display: flex; justify-content: center; align-items: center;">
+      <div class="imageHolder" style="height:95%;width:85%">
+      {% load static %}
+    <img src="{% static 'images/coder.avif' %}" alt="My image" style="max-width: 100%; max-height:100%;  object-fit: contain;">
+    </div>
+    </div>
+  
+    
+      <div class="col-lg-6" style="display: flex; justify-content: center; align-items: center;">
+        <div class="BannerTextHolder" style="height:75%;width:100%;display: flex;justify-content: center;align-items: center;">
+          <p class="bannerHeaderText">Welcome to<span class="titleHeader" style="color: rgb(217, 115, 52); font-weight: 750;"> TechHubBharat</span>
+          <br>
+          <span class="join">Serving For</span>
+            <span class="lastHeaderBanner title" style="font-weight: bold;" ></span>
+            <br><span class="slogan">( Where Innovations meets Aspirations )</span>
+            <br>
+            <button class="Explore" style="margin-top: 2vmin;background-color: rgb(35, 108, 185); color: white; border: 1px solid rgb(40, 100, 160);">Explore Us</button>
+
+        </p>  
+        </div>
+        
+      </div>
+     
+     </div> 
+
+     </div>
   <div class="container-fluid">
    <div class="container-fluid">
      
@@ -64,9 +94,31 @@
      
    </div>
  </div>
+ 
+ <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    const ham=document.getElementById("hamIcon");
+    const navHam=document.getElementById("navHam");
+    ham.addEventListener("click",()=>{
+    if(window.getComputedStyle(navHam).display === "none"){
+        navHam.style.display="block";
+    }
+    else{
+         navHam.style.display="none";
+    }
+})
+var typed=new Typed(".title",{
+    strings:["Development","Consulting","Projects","AI","IOT","Blockchain"],
+    typespeed:500,
+    backspeed:5000,
+    loop:true
+})
+
+</script>
 
 </body>
 </html>
+
 <style>
  
   .nav-icons li {
@@ -75,39 +127,107 @@
     margin-left: 5vmin;
     
   }
+  .nav-icons li:hover{
+    text-decoration: underline solid black 2.5px;
+  }
   *{
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
     box-sizing: border-box;
   }
   .icon-holder-PC{
-    width: 60%;display: flex; justify-content: center;align-items: center;
+    width: 70%;display: flex; justify-content: center;align-items: center;
   }
   
   .nav-icons{
     padding: 5vmin;
   }
+  #navHam{
+    display: none;
+  }
   @media(max-width:900px){
+    .logoHolder{
+    width: 40%;
+  }
+    .imageHolder{
+    height:27vmin;width:27vmin;
+    }
     .icon-holder-PC{
       display: none;
       
     }
+    
+    .Explore{
+      font-size: 4.75vmin;
+      padding: 1.75vmin;
+    }
     .icon-holder-mobile{
-    width: 60%;margin-top: 2vmin;display: flex; justify-content: flex-end;align-items: center;
+    width: 60%;display: flex; justify-content: flex-end;align-items: center;
   }
   .imgHolder1{
-    height:7vmin;width:7vmin;
+    height:15vmin;width:15vmin;
+    margin-right: 3vmin;
+  
   }
   .imageStyle{
     max-width: 100%;max-height: 100%;object-fit: contain;
   }
+  .slogan{
+    font-size: 4.5vmin;
   }
+  .title,.join{
+    font-size: 7.15vmin;
+  }
+  .bannerHeaderText{
+    font-size: 8vmin;
+  }
+  .navHolder{ width: 100vw; border: 1px solid black;
+  padding-bottom: 2vmin;}
+  ul{
+    margin-left: 0px;
+  }
+  .icon{
+      list-style: none;
+      border: 1px solid black;
+      margin-top: 1vmin;
+      width: 97%;
+      margin-left: 1vmin;
+      padding: 1.5vmin;
+    }
+  }
+
   @media(min-width:901px){
     
     .icon-holder-mobile{
       display: none;
     }
+    .slogan{
+      font-size: 3.15vmin;
+      color:darkgreen;
+    }
+    .navHolder{display: none;}
+   
+     .Explore{
+      font-size: 3vmin;
+      padding: 1.75vmin;
+    }
+    .bannerHeaderText{
+    font-size: 6.5vmin;
+  }
+
   }
  
-
+  .imageHolder{
+   
+  height:23vmin;width:23vmin;
+  }
+  .logoHolder{
+    width: 40%;
+  }
+  .icon:hover{
+    text-decoration: underline solid black 2.5px;
+    text-underline-offset: 3.5px;
+   }
+  
+ 
 </style>
